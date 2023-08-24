@@ -4,22 +4,26 @@
     box-sizing: border-box;
 }
 
+html {
+    font-size: 16px;
+}
+
 h1 {
-    font-size: 60px;
+    font-size: 4rem;
     color: #005F73;
     font-weight: 600;
     line-height: 65px;
 }
 
 h2 {
-    font-size: 40px;
+    font-size: 2.5rem;
     font-weight: 600px;
-    color: #FEFEFE;
+    color: #005F73;
 }
 
 p {
-    color: #FEFEFE;
-    font-size: 20px;
+    color: #005F73;
+    font-size: 1.25rem;
 }
 
 header {
@@ -27,7 +31,8 @@ header {
     align-items: center;
     justify-content: space-between;
     padding: 20px 60px;
-    background-color: #005F73;
+    background: rgba(0, 95, 115, 0.70);
+    backdrop-filter: blur(10px);
     color: #FEFEFE;
     width: 100%;
     position: sticky;
@@ -50,7 +55,7 @@ nav ul{
 nav a {
     text-decoration: none;
     color: #FEFEFE;
-    font-size: 18px;
+    font-size: 1.25rem;
 }
 
 nav a:hover {
@@ -72,32 +77,51 @@ nav a:active {
 
 .cards {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    margin: 20px 60px;
+    grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+    margin: 30px 60px;
     column-gap: 20px;
+    row-gap: 40px;
+    justify-items: stretch;
+    align-items: stretch;
 }
 
-.card {
-    grid-column-start: 1fr;
-    height: auto;
-    background-color: #005F73B2;
-    padding: 50px 30px;
-    border-radius: 20px;
+.card-border {
     display: flex;
     flex-direction: column;
+    background-color: #FEFEFE;
+    padding: 50px 50px;
+    border: 1px solid #005F73;
+    border-radius: 20px;
     align-items: flex-start;
     gap: 15px;
 }
 
+.tact {
+    grid-area: 1 / 1 / span 1 / span 1;
+    /* height: auto; */
+}
+
+.dramatico {
+    grid-area: 1 / 2 / span 1 / span 1;
+}
 .cafe-title {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 5px;
 }
+
+/* .image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 10px;
+} */
+
 .cafe-image {
-    width: 554px;
-    height: 432px;
+    max-width: 100%;
+    height: auto;
+    display: block;
     border-radius: 10px;
 }
 
@@ -107,29 +131,94 @@ nav a:active {
     justify-content: center;
     align-items: center;
     gap: 10px;
+    color: #FEFEFE;
     border-radius: 5px;
     background: #FF6746;
-    font-size: 12px;
-}
-#dramatico {
-    background-color: #A03159B2;
+    font-size: 0.75rem;
 }
 
 .button {
     text-decoration: none;
-    color: #FEFEFE;
-    border: 1px solid #FEFEFE;
+    color: #005F73;
+    border: 1px solid #005F73;
     border-radius: 5px;
-    font-size: 20px;
+    font-size: 1.25rem;
     padding: 10px 20px;
     background-color: transparent;
 }
 
 .button:hover {
-    background-color: #FEFEFE;
-    color: #005F73;
+    background-color: #005F73;
+    color: #FEFEFE;
 }
 
 .button:active {
     opacity: 0.5;
+}
+
+.melbourne {
+    grid-area: 2 / 1 / span 1 / span 2;
+    height: fit-content;
+}
+
+.card-filled {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 60px;
+    gap: 20px;
+    border-radius: 20px;
+    background: rgba(0, 95, 115, 0.70);
+}
+
+.card-filled h2, .card-filled p {
+    color: #FEFEFE;
+}
+
+.card-filled .button {
+    color: #FEFEFE;
+    border: 1px solid #FEFEFE;
+}
+
+.card-filled .button:hover {
+    color: #005F73;
+    background-color: #FEFEFE;
+}
+
+.coffee-world h2 {
+    margin-left: 60px;
+    margin-top: 60px;
+}
+
+.articles {
+    display: grid;
+    grid-template: repeat(7, 1fr) / repeat(12, 1fr);
+    margin: 30px 60px;
+    gap: 20px;
+    align-items: stretch;
+}
+
+.woman-coffee {
+    grid-area: 1 / 1 / span 6 / span 7;
+}
+
+.woman-coffee img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 20px;
+}
+
+.article-card {
+    grid-area: 3 / 6 / span 5 / span 7;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 40px 60px;
+    gap: 30px;
+    flex-shrink: 0;
+    background-color: #FEFEFE;
+    border: 1px solid #005F73;
+    border-radius: 20px;
 }
